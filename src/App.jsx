@@ -1,13 +1,26 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import viteLogo from "/favicon.ico";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Offers from "./pages/Offers";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Gde Si Svete!</h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/sign-in" element={<SignIn />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+        </Routes>
+      </Router>
     </>
   );
 }
