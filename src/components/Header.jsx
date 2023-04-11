@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router";
 export default function Header() {
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+
   function pathMatchRoute(route) {
     if (route === location.pathname) {
       return true;
@@ -40,7 +40,7 @@ export default function Header() {
               Offers
             </li>
             <li
-              className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${
+              className={`cursor-pointer py-3 text-sm font-semibold ${
                 pathMatchRoute("/sign-in") && "text-black border-b-red-500"
               }`}
               onClick={() => navigate("/sign-in")}
